@@ -22,8 +22,7 @@ internal static partial class InternalExtensions
             yield return item;
         }
     }
-    public static IEnumerable<TResult> NotNull<TSource, TResult>(this IEnumerable<TSource?> @this, Func<TSource?, TResult?>predicate)
-        where TSource : class
+    public static IEnumerable<TResult> NotNull<TSource, TResult>(this IEnumerable<TSource> @this, Func<TSource, TResult?> predicate)
         where TResult : class
     {
         foreach (var source in @this)
